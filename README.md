@@ -65,31 +65,81 @@
 
 ## 폴더 구조
 
+`[ ]` 안은 **그 파일을 수정하는 사람**입니다.
+
 ```
 DAstudy/
-├── README.md
-├── requirements.txt
-├── .github/                      # PR·Issue 템플릿
-├── data/README.md                # 데이터 다운로드 방법 (csv는 커밋하지 않음)
-├── common/                       # 공용 코드 (PR 리뷰 필수)
+├── README.md                     [운영자]
+├── requirements.txt              [운영자]
+├── .github/                      [운영자]  PR·Issue 템플릿, CODEOWNERS
+├── data/README.md                [운영자]  데이터 다운로드 방법 (csv는 아무도 커밋하지 않음)
+├── common/                       [발제자]  공용 코드 — [common] PR, 리뷰 필수
 │   ├── load_data.py              # load_bank(), load_home_credit(), load_cookie_cats()
 │   ├── bank/preprocess.py        # 4·7주차
 │   ├── home_credit/preprocess.py # 5·6·10주차
 │   └── evaluate.py               # 7·8주차 (데이터 공통)
-├── docs/                         # 공용 문서 (PR 리뷰 필수)
+├── docs/                         [발제자]  공용 문서 — 모임 후 PR, 리뷰 필수
 │   ├── data_dictionary/          # bank.md, home_credit.md, cookie_cats.md
 │   ├── decisions.md              # D-번호 뒤에 [bank] / [hc] / [cc] 태그
 │   └── audit_checklist.md
-├── templates/worksheet.md
+├── templates/worksheet.md        [운영자]
 └── weekNN_주제/
-    ├── README.md                 # 🎯 데이터·케이스·과제·🔍 진행 가이드 / 발제자: 개념 정리 + 모임 후 해설
-    ├── presenter/                # 발표 자료, 도입 데이터 실습, AI 답변 저장 등
-    ├── <github-id>/              # 각자 폴더
+    ├── README.md                 [발제자]  교재 범위·개념 정리(모임 전) + 모임 후 해설
+    ├── presenter/                [발제자]  발표용 노트북, 도입 데이터 실습, AI 답변 저장 등
+    ├── <github-id>/              [본인만]  각자 폴더
     │   ├── worksheet.md
     │   ├── analysis.ipynb
     │   └── extra_<데이터명>.ipynb  # 보조 데이터 (선택)
-    └── summary.md                # 각자 인사이트 한 줄씩
+    └── summary.md                [전원]    각자 한 줄씩 **추가만**
 ```
+
+## 누가 무엇을 수정하나
+
+원칙은 **한 PR에 한 종류만**. 개인 분석 PR에 `common/`·`docs/` 수정을 섞지 않습니다.
+
+### 분석자 — 매주 PR 1개 (+ 선택 1개)
+
+| PR 제목 | 브랜치 | 수정하는 파일 |
+| --- | --- | --- |
+| `[week03] 효원 - 핵심 결론 한 줄` | `week03-<아이디>` | `week03_*/<아이디>/worksheet.md`, `analysis.ipynb`<br>`week03_*/summary.md`에 내 한 줄 추가 |
+| `[week03-extra] 효원 - 데이터명` (선택) | `week03-<아이디>-extra` | `week03_*/<아이디>/extra_*.ipynb`만 |
+
+- 다른 사람 폴더, `common/`, `docs/`, 주차 README는 건드리지 않기
+- 공용 코드 버그나 변수 사전 오류를 찾으면 → Issue로 올리거나 별도 `[common]` PR
+- `summary.md`는 여럿이 같은 파일을 고치므로 충돌이 날 수 있음 → 아이디 알파벳 순서 자리에 추가 (4주차 Git 연습)
+
+### 발제자 — 맡은 주차에 PR 2~3개
+
+| 언제 | PR 제목 | 브랜치 | 수정하는 파일 |
+| --- | --- | --- | --- |
+| D-7 | (PR 아님) 주차 **Issue** 등록, 리뷰 배정 | — | — |
+| D-7 ~ D-2 | `[week03] 발제 준비` | `week03-prep` | `week03_*/README.md`의 교재 범위·개념 정리·발제자 칸<br>`week03_*/presenter/` |
+| 모임 후 | `[week03] 해설 + decisions` | `week03-wrap` | `week03_*/README.md`의 "모임 후 해설"<br>`docs/decisions.md` (D-00N)<br>`docs/audit_checklist.md`<br>`docs/data_dictionary/*.md` (필요할 때) |
+| 모임 후 (해당 주차만) | `[common] 함수명 추가` | `common-<함수명>` | 이번 주 "쌓을 것"에 적힌 `common/` 함수만 |
+
+발표 슬라이드는 노션, 코드·노트북은 `presenter/`에 둡니다.
+
+**`[common]` PR이 있는 주차와 merge 기한**
+
+| 주차 | 함수 | 이 날짜 전까지 merge (다음 사용 주차 D-1) |
+| --- | --- | --- |
+| 3 | `load_bank()` 확정 | 10.03 (4주차) |
+| 4 | `add_prev_contact_flag()` | 11.06 (7주차) |
+| 5 | `load_home_credit()`, `fix_days_employed()`, `add_missing_flags()` | **10.31** (5·6주차가 같은 날이라 **모임 전에** 미리) |
+| 6 | `cap_outliers()` | 11.21 (10주차) |
+| 7 | `make_pipeline()`, `time_split()` | 11.07 (8주차 모임 전) |
+| 8 | `report_classification()`, `profit_curve()` | 11.21 (10주차) |
+| 9 | `load_cookie_cats()` | **11.14** (9주차 **모임 전에** 미리) |
+
+### 리뷰 규칙
+
+| PR 종류 | merge 조건 |
+| --- | --- |
+| 개인 분석 / extra | Issue에서 배정된 리뷰어 1명 approve |
+| 발제 준비 | 아무나 1명 approve (빠르게) |
+| `common/`, `docs/` | `CODEOWNERS`에 지정된 사람 포함 1명 이상 approve (자기 PR은 자기가 approve 불가) |
+
+PR이 merge되면 다음 작업은 `main`을 최신화(`git pull upstream main`)한 뒤 **새 브랜치**에서 시작합니다.
 
 ## 처음 세팅
 

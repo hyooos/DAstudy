@@ -1,0 +1,11 @@
+# 공용 파일을 수정하는 PR에는 아래 사람들의 리뷰 요청이 자동으로 걸립니다.
+# 실제로 "리뷰 없이 merge 금지"가 되려면 GitHub Settings → Branches(또는 Rules)에서
+# main 브랜치에 "Require review from Code Owners"를 켜야 합니다.
+#
+# TODO: 스터디원 아이디를 추가하세요 (예: @hyooos @member2 @member3)
+#       한 명만 적어 두면 그 사람이 올린 common/docs PR은 approve해 줄 사람이 없어 막힙니다.
+
+/common/        @hyooos
+/docs/          @hyooos
+/.github/       @hyooos
+/requirements.txt @hyooos
