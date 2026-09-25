@@ -1,7 +1,7 @@
 # 2026-2 데이터 분석 스터디
 
-교재 **「데이터 분석가가 반드시 알아야 할 모든 것」** 을 읽고, **UCI Bank Marketing `bank-full.csv` 하나로 10주 동안** 분석하는 스터디입니다.
-같은 데이터를 계속 쓰기 때문에 공용 코드(`common/`)와 결정 기록(`docs/decisions.md`)을 매주 쌓아 갑니다.
+교재 **「데이터 분석가가 반드시 알아야 할 모든 것」** 을 읽고, **공통 데이터 3개**를 주차 주제에 맞게 번갈아 분석하는 10주 스터디입니다.
+공용 코드(`common/`)와 결정 기록(`docs/decisions.md`)을 데이터별로 매주 쌓아 갑니다.
 
 
 ## 개요
@@ -9,11 +9,24 @@
 | 항목 | 내용 |
 | --- | --- |
 | 교재 | 데이터 분석가가 반드시 알아야 할 모든 것 |
-| 데이터 | UCI Bank Marketing `bank-full.csv` (10주 내내 같은 데이터) + 주차별 보조 데이터(선택) |
+| 데이터 | 공통 데이터 3개 — 🏦 Bank Marketing / 💳 Home Credit / 🐱 Cookie Cats (아래 표) + 주차별 보조 데이터(선택) |
 | 메인 모델 | Logistic Regression (7~8주차에 Random Forest를 비교용으로만) |
 | 숙제 | ① 교재 해당 범위 읽기 ② 모임 후 D+3(수) 23:59까지 분석 PR 제출 |
 | 스터디 | 같은 자리에서 **각자 먼저** 분석 → 결과 비교·토론 → AI 결과와 비교 |
 | 스터디 후 | 분석 노트북을 PR로 제출 → 서로 리뷰 → merge |
+
+## 공통 데이터
+
+한 데이터로 모든 주제를 억지로 다루는 대신, **그 주 개념이 가장 선명하게 드러나는 데이터**를 고릅니다.
+주차별로 왜 이 데이터인지, 무엇을 유의해서 볼지는 각 주차 README 맨 위 🎯 참고.
+
+| 데이터 | 사용 주차 | 고른 이유 | 변수 사전 |
+| --- | --- | --- | --- |
+| 🏦 Bank Marketing | 1·2·3·4·7·8 | 날짜순 정렬인데 연도 열이 없음(심슨의 역설·시간순 분할), 공식 누수 변수 `duration`, 코드형 결측(-1, unknown), 적당한 불균형(11.7%) | [bank.md](docs/data_dictionary/bank.md) |
+| 💳 Home Credit | 5·6·10 (+9 보조) | 결측 종류가 다양(구조적·진짜·코드 365243·XNA), 극단 소득, AVG/MODE/MEDI 공선성 묶음, 변수 120개라 다중검정 체감 | [home_credit.md](docs/data_dictionary/home_credit.md) |
+| 🐱 Cookie Cats | 9 | 실제 무작위 배정 A/B 실험 → "검정 결과로 의사결정" 연습 | [cookie_cats.md](docs/data_dictionary/cookie_cats.md) |
+
+다운로드 방법은 [`data/README.md`](data/README.md). 데이터 파일은 레포에 올리지 않습니다.
 
 ## 멤버
 
@@ -26,42 +39,51 @@
 
 ## 커리큘럼
 
-| 주차 | 날짜 | 주제 | 폴더 | 발제자 |
-| --- | --- | --- | --- | --- |
-| 1 | 09.13 | 분석 목적 도출과 목적의 전환 (소급 정리) | [week01_problem-definition](week01_problem-definition/) |  |
-| 2 | 09.20 | 통계의 기초, 표본과 편향 (소급 정리) | [week02_sampling-bias](week02_sampling-bias/) |  |
-| 3 | 09.27 | 변수와 척도, 기술통계, 심슨의 역설 | [week03_scales-descriptive](week03_scales-descriptive/) |  |
-| 4 | 10.04 | 데이터 탐색과 상관분석 | [week04_eda-correlation](week04_eda-correlation/) |  |
-| 5 | 11.01 | 결측값과 범주형 변수 처리 | [week05_missing-categorical](week05_missing-categorical/) |  |
-| 6 | 11.01 | 이상치와 분포 확인 | [week06_outliers-distribution](week06_outliers-distribution/) |  |
-| 7 | 11.07 | 과적합, 교차검증, 데이터 누수 | [week07_overfitting-leakage](week07_overfitting-leakage/) |  |
-| 8 | 11.08 | 클래스 불균형과 분류 성능 평가 | [week08_imbalance-evaluation](week08_imbalance-evaluation/) |  |
-| 9 | 11.15 | 가설검정과 검증 설계 | [week09_hypothesis-testing](week09_hypothesis-testing/) |  |
-| 10 | 11.22 (비대면) | 다중공선성, 데이터 마사지와 분석가의 판단 | [week10_multicollinearity-judgment](week10_multicollinearity-judgment/) |  |
+| 주차 | 날짜 | 주제 | 데이터 | 폴더 | 발제자 |
+| --- | --- | --- | --- | --- | --- |
+| 1 | 09.13 | 분석 목적 도출과 목적의 전환 (소급 정리) | 🏦 | [week01](week01_problem-definition/) |  |
+| 2 | 09.20 | 통계의 기초, 표본과 편향 (소급 정리) | 🏦 | [week02](week02_sampling-bias/) |  |
+| 3 | 09.27 | 변수와 척도, 기술통계, 심슨의 역설 | 🏦 | [week03](week03_scales-descriptive/) |  |
+| 4 | 10.04 | 데이터 탐색과 상관분석 | 🏦 | [week04](week04_eda-correlation/) |  |
+| 5 | 11.01 | 결측값과 범주형 변수 처리 | 💳 | [week05](week05_missing-categorical/) |  |
+| 6 | 11.01 | 이상치와 분포 확인 | 💳 | [week06](week06_outliers-distribution/) |  |
+| 7 | 11.07 | 과적합, 교차검증, 데이터 누수 | 🏦 | [week07](week07_overfitting-leakage/) |  |
+| 8 | 11.08 | 클래스 불균형과 분류 성능 평가 | 🏦 | [week08](week08_imbalance-evaluation/) |  |
+| 9 | 11.15 | 가설검정과 검증 설계 | 🐱 + 💳 | [week09](week09_hypothesis-testing/) |  |
+| 10 | 11.22 (비대면) | 다중공선성, 데이터 마사지와 분석가의 판단 | 💳 | [week10](week10_multicollinearity-judgment/) |  |
 
-모든 케이스는 **"은행 마케팅팀이 분석가에게 보낸 요청"** 이라는 설정입니다.
-요청을 통계 문제로 번역하고 → AI에게 먼저 시켜본 뒤 → AI 답변을 검증하는 흐름으로 진행합니다. 과제는 **필수**를 먼저, 시간이 남으면 **심화**.
+케이스는 각 주차 데이터에 맞는 **"현업 담당자가 분석가에게 보낸 요청"** 이라는 설정입니다
+(🏦 마케팅팀장 / 💳 여신심사팀장 / 🐱 게임 기획팀장).
+요청을 통계 문제로 번역하고 → AI에게 먼저 시켜본 뒤 → AI 답변을 검증합니다. 과제는 **필수**를 먼저, 시간이 남으면 **심화**.
+
+**데이터가 바뀌는 주차 체크**
+
+- **5주차** 💳 첫 주 → 전원 D-1까지 다운로드하고 `load_home_credit()`으로 shape 확인, 열 설명 파일 한 번 훑어오기
+- **7주차** 🏦 복귀 → 4주차 `add_prev_contact_flag()`를 적용한 데이터로 모델링
+- **9주차** 🐱 메인 + 💳 비교 → `load_cookie_cats()` 확인
+- **10주차** 💳 → 5·6주차 전처리(`common/home_credit/preprocess.py`)를 이어서 사용
 
 ## 폴더 구조
 
 ```
-2026-2-data-analysis-study/
+DAstudy/
 ├── README.md
 ├── requirements.txt
 ├── .github/                      # PR·Issue 템플릿
 ├── data/README.md                # 데이터 다운로드 방법 (csv는 커밋하지 않음)
 ├── common/                       # 공용 코드 (PR 리뷰 필수)
-│   ├── load_data.py
-│   ├── preprocess.py
-│   └── evaluate.py
+│   ├── load_data.py              # load_bank(), load_home_credit(), load_cookie_cats()
+│   ├── bank/preprocess.py        # 4·7주차
+│   ├── home_credit/preprocess.py # 5·6·10주차
+│   └── evaluate.py               # 7·8주차 (데이터 공통)
 ├── docs/                         # 공용 문서 (PR 리뷰 필수)
-│   ├── data_dictionary.md
-│   ├── decisions.md
+│   ├── data_dictionary/          # bank.md, home_credit.md, cookie_cats.md
+│   ├── decisions.md              # D-번호 뒤에 [bank] / [hc] / [cc] 태그
 │   └── audit_checklist.md
 ├── templates/worksheet.md
 └── weekNN_주제/
-    ├── README.md                 # 케이스·과제 / 발제자: 개념 정리 + 모임 후 해설
-    ├── presenter/                # 발표 자료, 발제자가 준비한 실습 자료
+    ├── README.md                 # 🎯 데이터·케이스·과제·🔍 진행 가이드 / 발제자: 개념 정리 + 모임 후 해설
+    ├── presenter/                # 발표 자료, 도입 데이터 실습, AI 답변 저장 등
     ├── <github-id>/              # 각자 폴더
     │   ├── worksheet.md
     │   ├── analysis.ipynb
@@ -73,9 +95,9 @@
 
 ```bash
 # 1. GitHub에서 이 레포를 fork 한 뒤
-git clone https://github.com/<내-아이디>/2026-2-data-analysis-study.git
-cd 2026-2-data-analysis-study
-git remote add upstream https://github.com/<원본-아이디>/2026-2-data-analysis-study.git
+git clone https://github.com/<내-아이디>/DAstudy.git
+cd DAstudy
+git remote add upstream https://github.com/hyooos/DAstudy.git
 
 # 2. 가상환경 + 패키지
 python -m venv .venv
@@ -93,19 +115,22 @@ nbstripout --install
 ```python
 import sys
 sys.path.append("../..")
-from common.load_data import load_bank
 
-df = load_bank()          # shape (45211, 17) 확인까지 해 줌
+from common.load_data import load_bank, load_home_credit, load_cookie_cats
+from common.bank.preprocess import add_prev_contact_flag
+from common.home_credit.preprocess import fix_days_employed
+
+df = load_bank()          # shape까지 확인해 줌
 ```
 
 ## 매주 진행 흐름
 
 | 시점 | 누가 | 할 일 |
 | --- | --- | --- |
-| D-7 | 발제자 | 주차 Issue 등록, 리뷰 배정 |
+| D-7 | 발제자 | 주차 Issue 등록, 리뷰 배정 (데이터가 바뀌는 주차는 변수 사전 공유) |
 | D-7 ~ D-2 | 발제자 | 주차 폴더 `README.md`(범위, 개념 정리)와 발표 자료 올리기 |
 | D-7 ~ D-1 | 전원 | 교재 읽기 |
-| D-1 | 전원 | fork 최신화 + 작업 브랜치 생성 |
+| D-1 | 전원 | fork 최신화 + 작업 브랜치 생성 (+ 새 데이터 다운로드) |
 | D | 전원 | 모임에서 본인 폴더에 분석, 워크시트 작성, 로컬 커밋 |
 | D | 발제자 | 모임 후 README에 케이스 **질문·함정·해설** 추가, `decisions.md` PR |
 | D+3 (수) 23:59 | 전원 | 개인 분석 PR 제출 |
@@ -117,6 +142,18 @@ git pull upstream main
 git push origin main
 git checkout -b week03-<아이디>
 ```
+
+### 모임 진행 순서 (약 2시간, 발제자가 조정)
+
+| 시간 | 할 일 | 유의점 |
+| --- | --- | --- |
+| 0:00~0:15 | 도입 — 🔍 가이드의 도입 데이터 | 결과를 먼저 맞혀보게 하고(투표·퀴즈) 공개 |
+| 0:15~0:25 | "AI에게 먼저" 프롬프트 실행, 답변 저장 | 답변은 **저장만** 하고 워크시트 4번(예측)까지 쓴 뒤에 열어보기 |
+| 0:25~1:20 | 각자 이번 주 공통 데이터 분석 + 워크시트 1~5번 | 🎯과 🔍의 "유의해서 볼 것"을 체크하면서 |
+| 1:20~1:45 | 결과 비교·토론, AI 답변 검증 | 🔍의 "AI 검증 포인트" 기준으로 한 명씩 발표 |
+| 1:45~2:00 | decisions·체크리스트 합의 | 발제자가 D-00N 문장을 그 자리에서 확정 |
+
+도입·보조 데이터의 역할: **도입**(모임 시작 때 개념 체감) → **대조**(토론 때 "이번 공통 데이터에선 왜 약하게/강하게 나왔나?") → **심화**(`[weekNN-extra]` PR로 같은 절차를 다른 데이터에 적용).
 
 ## 커밋·PR 규칙
 
@@ -135,7 +172,7 @@ git checkout -b week03-<아이디>
 | 종류 | 형식 | 예시 |
 | --- | --- | --- |
 | 개인 분석 | `[weekNN] 이름 - 핵심 결론 한 줄` | `[week03] 효원 - 가입자 나이는 평균과 중앙값이 반대 방향` |
-| 공용 코드 | `[common] 함수명 추가/수정` | `[common] clean_unknown() 추가` |
+| 공용 코드 | `[common] 함수명 추가/수정` | `[common] fix_days_employed() 추가` |
 | 보조 데이터 | `[weekNN-extra] 이름 - 데이터명` | `[week05-extra] 효원 - Pima의 0값 결측` |
 
 PR 본문은 템플릿(`.github/pull_request_template.md`)이 자동으로 뜹니다.

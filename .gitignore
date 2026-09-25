@@ -1,0 +1,30 @@
+# 데이터 (data/README.md 보고 각자 다운로드)
+data/*
+!data/README.md
+*.csv
+*.xlsx
+*.zip
+*.parquet
+# 보조 데이터를 개인 폴더에 받아도 커밋되지 않게
+**/data/
+
+# 교재·저작권 자료
+*.pdf
+
+# 비밀 정보
+.env
+*.key
+secrets*
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# OS / 에디터
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
