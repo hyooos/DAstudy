@@ -108,11 +108,11 @@ DAstudy/
 | --- | --- | --- |
 | 3 | `load_bank()` 확정 | 10.03 (4주차) |
 | 4 | `add_prev_contact_flag()` | 11.06 (7주차) |
-| 5 | `load_home_credit()`, `fix_days_employed()`, `add_missing_flags()` | **10.31** (5·6주차가 같은 날이라 **모임 전에** 미리) |
+| 5 | `load_home_credit()`, `fix_days_employed()`, `add_missing_flags()` | **10.31** (5·6주차가 같은 날이라 **스터디 전에** 미리) |
 | 6 | `cap_outliers()` | 11.21 (10주차) |
-| 7 | `make_pipeline()`, `time_split()` | 11.07 (8주차 모임 전) |
+| 7 | `make_pipeline()`, `time_split()` | 11.07 (8주차 스터디 전) |
 | 8 | `report_classification()`, `profit_curve()` | 11.21 (10주차) |
-| 9 | `load_cookie_cats()` | **11.14** (9주차 **모임 전에** 미리) |
+| 9 | `load_cookie_cats()` | **11.14** (9주차 **스터디 전에** 미리) |
 
 
 PR이 merge되면 다음 작업은 `main`을 최신화(`git pull upstream main`)한 뒤 **새 브랜치**에서 시작합니다.
