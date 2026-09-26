@@ -24,7 +24,7 @@
 | --- | --- |
 | `jjjng-je` | 한정재 |
 | `hyooos` | 최효원 |
-| `tired-gini` | 형지원 |
+| `yu1nxd` | 형지원 |
 | `seohyunjinn` | 진서현 |
 | `foresttin` | 이수빈 |
 | `lcsvvo` | 김지우 |
