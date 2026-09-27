@@ -12,6 +12,10 @@ import pandas as pd
 
 DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 
+# bank의 month 열 순서 (연도 복원, 월별 집계 정렬에 사용)
+MONTH_ORDER = ["jan", "feb", "mar", "apr", "may", "jun",
+               "jul", "aug", "sep", "oct", "nov", "dec"]
+
 
 def _read(filename, expected_shape, check_shape, **read_kwargs):
     path = DATA_DIR / filename
@@ -29,15 +33,16 @@ def _read(filename, expected_shape, check_shape, **read_kwargs):
 
 
 def load_bank(check_shape=True):
-    """🏦 bank-full.csv — (45211, 17), 구분자 ';'.
+    """bank-full.csv — (45211, 17), 구분자 ';'.
 
     bank-additional-full.csv(거시변수 추가, balance 없음)와 헷갈리지 않게 shape을 확인한다.
+    행 순서가 곧 날짜 순서(2008.5~2010.11)이므로 정렬하거나 섞지 않는다 (week03 연도 복원, week07 시간순 분할).
     """
     return _read("bank-full.csv", (45211, 17), check_shape, sep=";")
 
 
 def load_home_credit(check_shape=True):
-    """💳 application_train.csv — (307511, 122).
+    """application_train.csv — (307511, 122).
 
     이 스터디는 이 파일만 사용 (bureau 등 보조 테이블, application_test는 X).
     """
@@ -45,12 +50,12 @@ def load_home_credit(check_shape=True):
 
 
 def load_home_credit_columns():
-    """💳 HomeCredit_columns_description.csv — 열 설명. latin-1이 아니면 UnicodeDecodeError."""
+    """HomeCredit_columns_description.csv — 열 설명. latin-1이 아니면 UnicodeDecodeError."""
     return _read(
         "HomeCredit_columns_description.csv", None, False, encoding="latin-1", index_col=0
     )
 
 
 def load_cookie_cats(check_shape=True):
-    """🐱 cookie_cats.csv — (90189, 5)."""
+    """cookie_cats.csv — (90189, 5)."""
     return _read("cookie_cats.csv", (90189, 5), check_shape)
