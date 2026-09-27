@@ -11,6 +11,9 @@ data/*
 # 교재·저작권 자료
 *.pdf
 
+# 발제자 해설본 (답이 들어 있어서 모임 전에는 올리지 않음, 해설은 모임 후 주차 README로)
+**/presenter/*solution*.ipynb
+
 # 비밀 정보
 .env
 *.key
