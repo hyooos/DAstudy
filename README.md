@@ -33,16 +33,16 @@
 
 | 주차 | 날짜 | 주제 | 데이터 | 폴더 | 발제자 |
 | --- | --- | --- | --- | --- | --- |
-| 1 | 09.13 | 분석 목적 도출과 목적의 전환 (소급 정리) | Bank Marketing | [week01](week01_problem-definition/) | 전원 |
-| 2 | 09.20 | 통계의 기초, 표본과 편향 (소급 정리) | Bank Marketing | [week02](week02_sampling-bias/) | 한정재 |
-| 3 | 09.27 | 변수와 척도, 기술통계, 심슨의 역설 | Bank Marketing | [week03](week03_scales-descriptive/) | 최효원 |
-| 4 | 10.04 | 데이터 탐색과 상관분석 | Bank Marketing | [week04](week04_eda-correlation/) | 이수빈 |
-| 5 | 11.01 | 결측값과 범주형 변수 처리 | Home Credit | [week05](week05_missing-categorical/) | 진서현 |
-| 6 | 11.01 | 이상치와 분포 확인 | Home Credit | [week06](week06_outliers-distribution/) | 김지우 |
-| 7 | 11.07 | 과적합, 교차검증, 데이터 누수 | Bank Marketing | [week07](week07_overfitting-leakage/) | 형지원 |
-| 8 | 11.08 | 클래스 불균형과 분류 성능 평가 | Bank Marketing | [week08](week08_imbalance-evaluation/) | - |
-| 9 | 11.15 | 가설검정과 검증 설계 | Cookie Cats + Home Credit | [week09](week09_hypothesis-testing/) | - |
-| 10 | 11.22 (비대면) | 다중공선성, 데이터 마사지와 분석가의 판단 | Home Credit | [week10](week10_multicollinearity-judgment/) | - |
+| 1 | 09.13 | 분석 목적 도출과 목적의 전환 (소급 정리) | Bank Marketing | [week01](week01_분석목적도출/) | 전원 |
+| 2 | 09.20 | 통계의 기초, 표본과 편향 (소급 정리) | Bank Marketing | [week02](week02_표본과편향/) | 한정재 |
+| 3 | 09.27 | 변수와 척도, 기술통계, 심슨의 역설 | Bank Marketing | [week03](week03_척도와기술통계/) | 최효원 |
+| 4 | 10.04 | 데이터 탐색과 상관분석 | Bank Marketing | [week04](week04_탐색과상관분석/) | 이수빈 |
+| 5 | 11.01 | 결측값과 범주형 변수 처리 | Home Credit | [week05](week05_결측값과범주형/) | 진서현 |
+| 6 | 11.01 | 이상치와 분포 확인 | Home Credit | [week06](week06_이상치와분포/) | 김지우 |
+| 7 | 11.07 | 과적합, 교차검증, 데이터 누수 | Bank Marketing | [week07](week07_과적합과누수/) | 형지원 |
+| 8 | 11.08 | 클래스 불균형과 분류 성능 평가 | Bank Marketing | [week08](week08_불균형과성능평가/) | - |
+| 9 | 11.15 | 가설검정과 검증 설계 | Cookie Cats + Home Credit | [week09](week09_가설검정/) | - |
+| 10 | 11.22 (비대면) | 다중공선성, 데이터 마사지와 분석가의 판단 | Home Credit | [week10](week10_다중공선성과판단/) | - |
 
 ## 폴더 구조
 
