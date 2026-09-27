@@ -106,7 +106,7 @@
 
 <!-- 스터디 전 (D-7 ~ D-2) -->
 
-원문과 그림은 노션: [[9.27 변수와 척도, 기술통계, 심슨의 역설](https://app.notion.com/p/180bf498e393822e94a3816553b6b6b5)](https://app.notion.com/p/3e8bf498e39380fe8988c589207d4174?source=copy_link)
+원문과 그림은 노션: [9.27 변수와 척도, 기술통계, 심슨의 역설](https://app.notion.com/p/3e8bf498e39380fe8988c589207d4174)
 
 #### 3.1 변수의 종류
 
