@@ -2,6 +2,7 @@
 
 교재 **「데이터 분석가가 반드시 알아야 할 모든 것」** 을 읽고, **공통 데이터 3개**를 주차 주제에 맞게 번갈아 분석하는 10주 스터디입니다.
 공용 코드(`common/`)와 분석 내용(`docs/decisions.md`)을 데이터별로 매주 쌓아 갑니다.
+**노션**: https://app.notion.com/p/BOAZ-3d3bf498e3938047abbae259590701de?source=copy_link
 
 ## 분석 데이터
 
@@ -90,6 +91,8 @@ DAstudy/
 
 발표 내용은 노션, 코드·노트북은 `presenter/`에 넣어주세요.
 
+참고: https://app.notion.com/p/3e8bf498e3938044b226cb6c64dcb0dd?source=copy_link
+
 ### 피발제자
 
 | PR 제목 | 브랜치 | 수정하는 파일 |
@@ -116,6 +119,8 @@ DAstudy/
 
 
 PR이 merge되면 다음 작업은 `main`을 최신화(`git pull upstream main`)한 뒤 **새 브랜치**에서 시작합니다.
+
+참고: https://app.notion.com/p/3e8bf498e3938042921af2fb45d49b7b?source=copy_link
 
 ## 처음 세팅
 
