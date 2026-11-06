@@ -1,4 +1,4 @@
-# 데이터 (data/README.md 보고 각자 다운로드)
+# 데이터 (Bank 원본만 저장소에 포함, 나머지는 각자 다운로드)
 data/*
 !data/README.md
 *.csv
@@ -7,6 +7,11 @@ data/*
 *.parquet
 # 보조 데이터를 개인 폴더에 받아도 커밋되지 않게
 **/data/
+
+# week07 실습용 공식 Bank 원본만 예외로 추적
+!/data/
+!/data/README.md
+!/data/bank-full.csv
 
 # 교재·저작권 자료
 *.pdf

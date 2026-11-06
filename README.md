@@ -56,7 +56,7 @@ DAstudy/
 ├── README.md                     
 ├── requirements.txt             
 ├── .github/                      PR·Issue 템플릿, CODEOWNERS
-├── data/README.md                데이터 다운로드 방법 (csv는 커밋 xxxx)
+├── data/README.md                데이터 안내 (bank-full.csv만 저장소 포함)
 ├── common/                       [발제자]  공용 코드 — [common] PR, 리뷰 필수
 │   ├── load_data.py              # load_bank(), load_home_credit(), load_cookie_cats()
 │   ├── bank/preprocess.py        # 4·7주차
